@@ -1,6 +1,6 @@
 name: 'Appcenter codepush'
 author: 'Michael Bauer'
-description: 'Wraps the appcenter CLI to enable common commands. Uses node 16.x to work with latest react-native.'
+description: 'Wraps the appcenter CLI codepush command. Uses node 16.x to work with latest react-native.'
 branding:
   icon: 'package'
   color: 'gray-dark'
@@ -13,3 +13,5 @@ runs:
 inputs:
   directory:
     description: 'Directory from which to run the command'
+  args:
+    description: 'Arguments to pass to appcenter cli'
