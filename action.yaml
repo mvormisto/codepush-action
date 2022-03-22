@@ -1,5 +1,5 @@
-name: 'Freeplay - GitHub Action for Codepush'
-author: 'Jacob Turner'
+name: 'GitHub Action for codepush'
+author: 'Michael Bauer'
 description: 'Wraps the appcenter CLI to enable common commands. Supports mono repos.'
 branding:
   icon: 'package'

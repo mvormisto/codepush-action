@@ -1,7 +1,7 @@
 # Credit to Author
-This project was forked from https://github.com/NishanthShankar/codepush-action and updated to use a working directory argument. This was needed to make the action work for a monorepo environment.
+This project was forked from https://github.com/FreeplayApp/codepush-action and updated to use a newer node version.
 
-# GitHub Actions for Firebase
+# GitHub Actions for Codepush
 
 This Action for [appcenter codepush](https://github.com/microsoft/appcenter-cli) enables arbitrary actions with the `appcenter` command-line client.
 
@@ -47,7 +47,3 @@ jobs:
 ## License
 
 The Dockerfile and associated scripts and documentation in this project are released under the [MIT License](LICENSE).
-
-
-### Credits
-Thanks to [Jeremy Shore](https://github.com/w9jds) for the firebase-action repo.

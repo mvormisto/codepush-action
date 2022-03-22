@@ -1,9 +1,9 @@
-FROM node:10-slim
+FROM node:16-slim
 
-LABEL version="1.1.0"
-LABEL repository="https://github.com/NishanthShankar/codepush-action"
-LABEL homepage="https://github.com/NishanthShankar/codepush-action"
-LABEL maintainer="Nishanth Shankar <nishanthShankr@gmail.com>"
+LABEL version="1.0.0"
+LABEL repository="https://github.com/TripleSpeeder/codepush-action"
+LABEL homepage="https://github.com/TripleSpeeder/codepush-action"
+LABEL maintainer="Michael bauer <triplespeeder@gmail.com>"
 
 LABEL com.github.actions.name="GitHub Action for Codepush"
 LABEL com.github.actions.description="Wraps the appcenter CLI to enable common commands."
