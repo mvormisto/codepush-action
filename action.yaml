@@ -1,6 +1,6 @@
 name: 'GitHub Action for codepush'
 author: 'Michael Bauer'
-description: 'Wraps the appcenter CLI to enable common commands. Supports mono repos.'
+description: 'Wraps the appcenter CLI to enable common commands. Uses node 16.x to work with latest react-native.'
 branding:
   icon: 'package'
   color: 'gray-dark'
