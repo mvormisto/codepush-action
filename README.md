@@ -1,11 +1,11 @@
 # GitHub Actions for Codepush
 
-This Action for [appcenter codepush](https://github.com/microsoft/appcenter-cli) enables arbitrary actions with the `appcenter` command-line client.
+Make the `appcenter codepush` command ([appcenter codepush cli](https://github.com/microsoft/appcenter-cli)) available to any github action, so you can automatically release OTA-updates for your iOS/Android react-native apps.
 
 ## Inputs
 
-* `directory` - Directory from which to run the command
 * `args` - **Required**. Arguments for the `appcenter codepush` command
+* `directory` - **Optional**. Directory from which to run the command. Use this if your code lives in a subdirectory of the repo.
 
 
 ## Environment variables
@@ -41,7 +41,7 @@ jobs:
 ```
 
 # Credit to Author
-This project was forked from https://github.com/FreeplayApp/codepush-action and updated to use a newer node version.
+This Github Action was forked from https://github.com/FreeplayApp/codepush-action and updated to use a newer node version.
 
 ## License
 
