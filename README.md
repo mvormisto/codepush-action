@@ -8,7 +8,7 @@ This Action for [appcenter codepush](https://github.com/microsoft/appcenter-cli)
 ## Inputs
 
 * `directory` - Directory from which to run the command
-* `args` - **Required**. This is the arguments you want to use for the `appcenter` cli
+* `args` - **Required**. Arguments for the `appcenter codepush` command
 
 
 ## Environment variables
@@ -17,7 +17,7 @@ This Action for [appcenter codepush](https://github.com/microsoft/appcenter-cli)
 
 ## Example
 
-To authenticate with Codepush, and deploy to Codepush:
+Create a new release to Codepush Staging deployment on push to master branch:
 
 ```yaml
 name: Build and Deploy
@@ -36,9 +36,9 @@ jobs:
       - name: Install Dependencies
         run: npm install
       - name: Deploy to Codepush
-        uses: NishanthShankar/codepush-action@master
+        uses: TripleSpeeder/codepush-action@master
         with:
-          args: release-react -d Production
+          args: release-react -d Staging
         env:
           APPCENTER_ACCESS_TOKEN: ${{ secrets.APPCENTER_ACCESS_TOKEN }}
 ```
