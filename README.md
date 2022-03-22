@@ -1,6 +1,3 @@
-# Credit to Author
-This project was forked from https://github.com/FreeplayApp/codepush-action and updated to use a newer node version.
-
 # GitHub Actions for Codepush
 
 This Action for [appcenter codepush](https://github.com/microsoft/appcenter-cli) enables arbitrary actions with the `appcenter` command-line client.
@@ -43,6 +40,8 @@ jobs:
           APPCENTER_ACCESS_TOKEN: ${{ secrets.APPCENTER_ACCESS_TOKEN }}
 ```
 
+# Credit to Author
+This project was forked from https://github.com/FreeplayApp/codepush-action and updated to use a newer node version.
 
 ## License
 
