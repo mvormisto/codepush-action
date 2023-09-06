@@ -10,38 +10,64 @@ Make the `appcenter codepush` command ([appcenter codepush cli](https://github.c
 
 ## Environment variables
 
-* `APPCENTER_ACCESS_TOKEN` - **Required**. The token to use for authentication. This token can be aquired through the `appcenter dashboard`.
+* `APPCENTER_ACCESS_TOKEN_X` - **Required**. The api token to use for authentication. This token can be generated through the `appcenter dashboard`.
 
 ## Example
 
 Create a new release to Codepush Staging deployment on push to master branch:
 
 ```yaml
-name: Build and Deploy
+name: Codepush DEV
 on:
   push:
     branches:
-      - master
+      - main
+
+env:
+  APP_CENTER_TOKEN_ANDROID: ${{ secrets.APPCENTER_API_TOKEN_ANDROID }}
+  APP_NAME: ${{ 'org-name/app-name' }}
+  APP_CENTER_TOKEN_IOS: ${{ secrets.APPCENTER_API_TOKEN_IOS }}
+  APP_NAME_IOS: ${{ 'org-name/app-name-ios' }}
 
 jobs:
-  deploy:
-    name: Deploy
+  update-android:
+    name: Codepush Anroid Update
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repo
+      - name: Checkout Repository
         uses: actions/checkout@master
+
       - name: Install Dependencies
         run: npm install
-      - name: Deploy to Codepush
-        uses: TripleSpeeder/codepush-action@master
+
+      - name: Codepush Update
+        uses: mvormisto/codepush-action@master
         with:
-          args: release-react -d Staging
+          args: release-react -a ${{ env.APP_NAME }} -d Development
         env:
-          APPCENTER_ACCESS_TOKEN: ${{ secrets.APPCENTER_ACCESS_TOKEN }}
+          APPCENTER_ACCESS_TOKEN: ${{ env.APP_CENTER_TOKEN_ANDROID }}
+
+  update-ios:
+    name: Codepush iOS Update
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@master
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Deploy to Codepush
+        uses: mvormisto/codepush-action@master
+        with:
+          args: release-react -a ${{ env.APP_NAME_IOS }} -d Development
+        env:
+          APPCENTER_ACCESS_TOKEN: ${{ env.APP_CENTER_TOKEN_IOS }}
+
 ```
 
 # Credit to Author
-This Github Action was forked from https://github.com/FreeplayApp/codepush-action and updated to use a newer node version.
+This Github Action was forked from https://github.com/TripleSpeeder/codepush-action and updated to not change the working directory when user gives no input.
 
 ## License
 
